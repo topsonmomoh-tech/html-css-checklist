@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>30-Day HTML & CSS Challenge</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2E86C1;
+      margin-bottom: 10px;
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      width: 100%;
+      background: #e0e0e0;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 10px 0 20px;
+    }
+
+    .progress-bar {
+      height: 20px;
+      width: 0%;
+      background: linear-gradient(90deg, #2E86C1, #4CAF50);
+      text-align: center;
+      color: white;
+      font-size: 12px;
+      line-height: 20px;
+      border-radius: 20px;
+      transition: width 0.3s ease;
+    }
+
+    .counter {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    /* Task styling */
+    .task {
+      display: flex;
+      align-items: center;
+      background: white;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
+    }
+
+    .task:hover {
+      background: #eaf4ff;
+    }
+
+    .task input[type="checkbox"] {
+      margin-right: 12px;
+      width: 20px;
+      height: 20px;
+      accent-color: #2E86C1;
+    }
+
+    .task label {
+      flex: 1;
+      font-size: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .task label {
+        font-size: 14px;
+      }
+    }
+  </style>
+
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2E86C1">
+</head>
+<body>
+  <h1>30-Day HTML & CSS Challenge</h1>
+
+  <!-- Progress Tracker -->
+  <div class="counter">0 / 30 Completed</div>
+  <div class="progress-container">
+    <div class="progress-bar">0%</div>
+  </div>
+
+  <!-- Task List -->
+  <div class="task"><input type="checkbox" id="day1"><label for="day1">Day 1: Hello World Page</label></div>
+  <div class="task"><input type="checkbox" id="day2"><label for="day2">Day 2: Lists (Hobbies/Foods)</label></div>
+  <div class="task"><input type="checkbox" id="day3"><label for="day3">Day 3: Images + Captions</label></div>
+  <div class="task"><input type="checkbox" id="day4"><label for="day4">Day 4: Links (Internal + External)</label></div>
+  <div class="task"><input type="checkbox" id="day5"><label for="day5">Day 5: Personal Bio Page</label></div>
+  <div class="task"><input type="checkbox" id="day6"><label for="day6">Day 6: Basic CSS Colors + Fonts</label></div>
+  <div class="task"><input type="checkbox" id="day7"><label for="day7">Day 7: Navigation Menu</label></div>
+  <div class="task"><input type="checkbox" id="day8"><label for="day8">Day 8: Simple Blog Post Layout</label></div>
+  <div class="task"><input type="checkbox" id="day9"><label for="day9">Day 9: Contact Form (No Backend)</label></div>
+  <div class="task"><input type="checkbox" id="day10"><label for="day10">Day 10: Two-Column Layout</label></div>
+  <div class="task"><input type="checkbox" id="day11"><label for="day11">Day 11: Photo Gallery Grid</label></div>
+  <div class="task"><input type="checkbox" id="day12"><label for="day12">Day 12: Resume Page</label></div>
+  <div class="task"><input type="checkbox" id="day13"><label for="day13">Day 13: Pricing Table</label></div>
+  <div class="task"><input type="checkbox" id="day14"><label for="day14">Day 14: Styled Buttons</label></div>
+  <div class="task"><input type="checkbox" id="day15"><label for="day15">Day 15: Responsive Card Layout</label></div>
+  <div class="task"><input type="checkbox" id="day16"><label for="day16">Day 16: Landing Page Hero Section</label></div>
+  <div class="task"><input type="checkbox" id="day17"><label for="day17">Day 17: Footer with Social Links</label></div>
+  <div class="task"><input type="checkbox" id="day18"><label for="day18">Day 18: Registration Form</label></div>
+  <div class="task"><input type="checkbox" id="day19"><label for="day19">Day 19: Sidebar Layout</label></div>
+  <div class="task"><input type="checkbox" id="day20"><label for="day20">Day 20: CSS Animations (Hover Effects)</label></div>
+  <div class="task"><input type="checkbox" id="day21"><label for="day21">Day 21: Flexbox Layout Practice</label></div>
+  <div class="task"><input type="checkbox" id="day22"><label for="day22">Day 22: CSS Grid Practice</label></div>
+  <div class="task"><input type="checkbox" id="day23"><label for="day23">Day 23: Portfolio Homepage</label></div>
+  <div class="task"><input type="checkbox" id="day24"><label for="day24">Day 24: Styled Table</label></div>
+  <div class="task"><input type="checkbox" id="day25"><label for="day25">Day 25: Login Page</label></div>
+  <div class="task"><input type="checkbox" id="day26"><label for="day26">Day 26: Product Card</label></div>
+  <div class="task"><input type="checkbox" id="day27"><label for="day27">Day 27: Responsive Navbar</label></div>
+  <div class="task"><input type="checkbox" id="day28"><label for="day28">Day 28: CSS Variables Theme</label></div>
+  <div class="task"><input type="checkbox" id="day29"><label for="day29">Day 29: Blog Homepage</label></div>
+  <div class="task"><input type="checkbox" id="day30"><label for="day30">Day 30: Final Portfolio Project</label></div>
+
+  <script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const counter = document.querySelector('.counter');
+    const progressBar = document.querySelector('.progress-bar');
+    const totalTasks = checkboxes.length;
+
+    // Update progress
+    function updateProgress() {
+      let completed = 0;
+      checkboxes.forEach(cb => {
+        if (cb.checked) completed++;
+      });
+
+      const percent = Math.round((completed / totalTasks) * 100);
+      counter.textContent = `${completed} / ${totalTasks} Completed`;
+      progressBar.style.width = percent + "%";
+      progressBar.textContent = percent + "%";
+    }
+
+    // Load saved states
+    checkboxes.forEach(checkbox => {
+      const saved = localStorage.getItem(checkbox.id);
+      if (saved === "true") {
+        checkbox.checked = true;
+      }
+
+      checkbox.addEventListener("change", () => {
+        localStorage.setItem(checkbox.id, checkbox.checked);
+        updateProgress();
+      });
+    });
+
+    // Initial update
+    updateProgress();
+  </script>
+  <script>
+  // Register Service Worker
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js")
+      .then(() => console.log("Service Worker Registered"));
+  }
+</script>
+
+</body>
+</html>
